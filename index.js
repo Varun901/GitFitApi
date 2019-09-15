@@ -1,11 +1,16 @@
 var express = require('express');
 const app = express();
-var fileupload = require ('express-fileupload');
-app.use(fileupload());
+const port = 3000
 
-app.get('/', (req, res, next) => {
-  res.status(200).send('Hello World!');
-})
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+// var fileupload = require ('express-fileupload');
+// app.use(fileupload());
+
+// app.get('/', (req, res, next) => {
+//   res.status(200).send('Hello World!');
+// })
 
 
 // app.post("/upload", function(req, res, next) {
@@ -20,15 +25,15 @@ app.get('/', (req, res, next) => {
 //   console.log(req.files)
   
 //   });
-// })
+// // })
 
-const port = process.env.PORT || 3000;
-console.log(process.env.PORT)
+// const port = process.env.PORT || 3000;
+// console.log(process.env.PORT)
 
 
-app.listen(3000, () => {
-  console.log('RESTful API server started on: ' + port);
-});
+// app.listen(3000, () => {
+//   console.log('RESTful API server started on: ' + port);
+// });
 
 
 
